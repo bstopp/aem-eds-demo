@@ -1,0 +1,9 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg"
+     class="envelope"
+     role="img"
+     aria-hidden="true"
+     tabindex="-1"
+     viewBox="0 0 24 16">
+    <path d="M21.856 1.25H2.144L12 9.735l9.856-8.485zm.944.809l-6.73 5.793 6.73 6.067V2.059zm-7.668 6.6l-2.706 2.33-.346.436-.08-.069-.08.07-.346-.437-2.706-2.33-6.756 6.091h19.776l-6.756-6.09zM1.2 2.06v11.86l6.73-6.067L1.2 2.06zM0 0h24v16H0V0z"
+          fill="#AAA" fill-rule="nonzero"/>
+</svg>
