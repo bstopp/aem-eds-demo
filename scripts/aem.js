@@ -404,10 +404,11 @@ function decorateIcon(span, prefix = '') {
   const iconName = Array.from(span.classList)
     .find((c) => c.startsWith('icon-'))
     .substring(5);
+
   const img = document.createElement('img');
   img.dataset.iconName = iconName;
   img.src = `${window.hlx.codeBasePath}${prefix}/icons/${iconName}.svg`;
-  img.alt = placeholders[iconName] || iconName;
+  img.alt = placeholders[`icon_${iconName}`] || iconName;
   img.loading = 'lazy';
   span.append(img);
 }
