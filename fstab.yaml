@@ -1,4 +1,4 @@
 mountpoints:
   /: https://adobe.sharepoint.com/:f:/r/sites/HelixProjects/Shared%20Documents/sites/stopp
 folders:
-  /en/test/: /en/test/default
+  /en/test/: /en/test/default/
