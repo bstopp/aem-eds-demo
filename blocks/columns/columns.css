@@ -19,11 +19,11 @@
   display: block;
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .columns > div {
     align-items: center;
     flex-direction: unset;
-    gap: 32px;
+    gap: 24px;
   }
 
   .columns > div > div {
