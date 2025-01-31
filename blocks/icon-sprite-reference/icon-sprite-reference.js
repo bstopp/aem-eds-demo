@@ -3,8 +3,8 @@ import { readBlockConfig } from '../../scripts/aem.js';
 import { decorateSpriteIcons } from '../../scripts/utils/sprite-icon.js';
 
 export default async function decorate(block) {
-  block.replaceChildren();
   const config = readBlockConfig(block);
+  block.replaceChildren();
   const parser = new DOMParser();
 
   const url = config.sprite || `${window.hlx.codeBasePath}/icons/sprite.svg`;
