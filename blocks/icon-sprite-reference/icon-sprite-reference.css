@@ -1,0 +1,72 @@
+.icon-sprite-reference.block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-evenly;
+  align-items: stretch;
+
+  .icon-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+
+    div {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      justify-content: center;
+
+      span.icon svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      span.icon-magnifying-glass-0 svg {
+        color: red;
+      }
+
+      span.icon-magnifying-glass-1 svg {
+        color: orange;
+      }
+
+      span.icon-magnifying-glass-2 svg {
+        color: yellow;
+      }
+
+      span.icon-magnifying-glass-3 svg {
+        color: green;
+      }
+
+      span.icon-magnifying-glass-4 svg {
+        color: blue;
+      }
+
+      span.icon-magnifying-glass-5 svg {
+        color: purple;
+      }
+
+      span.icon-magnifying-glass-6 svg {
+        color: brown;
+      }
+
+      span.icon-magnifying-glass-7 svg {
+        color: grey;
+      }
+
+      span.icon-magnifying-glass-8 svg {
+        color: black;
+      }
+
+      span.icon-magnifying-glass-9 svg {
+        color: white;
+      }
+
+
+    }
+
+    span {
+      align-self: flex-end;
+    }
+  }
+}
