@@ -15,12 +15,12 @@ export function decorateSpriteIcon(span, prefix = '', alt = '') {
         alt,
         viewBox: target.getAttribute('viewBox'),
       },
-      domEl('use', { href: `#${iconName}` })
+      domEl('use', { href: `#${iconName}` }),
     );
 
     // I don't know why the DOM Parser is needed, but if you don't do this, the icons never show up.
     span.append(
-      new DOMParser().parseFromString(svg.outerHTML, 'image/svg+xml').querySelector('svg')
+      new DOMParser().parseFromString(svg.outerHTML, 'image/svg+xml').querySelector('svg'),
     );
   } else {
     aemDecorateIcons(span.parentElement, prefix);
@@ -31,9 +31,7 @@ export async function decorateSpriteIcons(el, prefix = '') {
   if (!sprite) {
     try {
       // cache the sprite for future calls.
-      const html = await fetch(`${window.hlx.codeBasePath}/icons/sprite.svg`).then((response) =>
-        response.text()
-      );
+      const html = await fetch(`${window.hlx.codeBasePath}/icons/sprite.svg`).then((response) => response.text());
       sprite = new DOMParser().parseFromString(html, 'image/svg+xml').querySelector('svg');
       document.body.append(sprite);
     } catch (e) {
