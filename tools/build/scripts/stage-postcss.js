@@ -9,16 +9,16 @@ function fileToStage(all, current) {
   const working = current.working_dir.trim();
 
   // Not a PostCSS file
-  if (!path.endsWith('.pcss')) return undefined; 
+  if (!path.endsWith('.pcss')) return undefined;
 
   // Not indexed or untracked
-  if (!index || `${index + working}` === '??') return undefined; 
-  
+  if (!index || `${index + working}` === '??') return undefined;
+
   if (index && working) throw new Error(`PostCSS (${path}) file has staged and unstaged changes. Cannot process file.`);
 
   const target = path.replace('.pcss', '.css');
   const css = all.find((f) => f.path === target); // Check if target is already staged
-  
+
   if (!css) return target; // No file, needs to be staged
   if (css.working_dir.trim()) return target; // CSS file has changes, needs to be regenerated & staged
   return undefined; // Target file is already staged
@@ -27,15 +27,15 @@ function fileToStage(all, current) {
 try {
   const git = SimpleGit();
   const { files } = await git.status();
-  files.forEach((file) => {
+  for (const file of files) {
     const css = fileToStage(files, file);
     if (css) {
       console.log(`Source for file (${css}) modified, rebuilding...`);
       execSync(`node tools/build/scripts/postcss.js ${file.path}`);
       console.log(`Staging ${css}`);
-      git.add(css);
+      await git.add(css);
     }
-  });
+  }
 
 } catch (e) {
   if (e.status) process.exit(e.status);

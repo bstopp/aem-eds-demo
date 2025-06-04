@@ -20,8 +20,6 @@ async function processFile(file) {
   const content = await fs.readFile(file, 'utf8');
   const target = file.replace('.pcss', '.css');
 
-  console.log('Source:', file);
-  console.log('Output:', target);
   await postcss([
     postcssImport(),
     postcssNested(),
